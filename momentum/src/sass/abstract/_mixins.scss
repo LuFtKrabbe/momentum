@@ -1,0 +1,39 @@
+@mixin font ($size, $height, $weight, $style) {
+    font-size: $size;
+    line-height: $height;
+    font-weight: $weight;
+    font-style: $style;
+}
+
+@mixin block_size ($width, $height, $radius) {
+    width: $width;
+    height: $height;
+    border-radius: $radius;
+}
+
+@mixin flex ($display, $align-items, $justify-content, $wrap: nowrap) {
+    display: $display;
+    align-items: $align-items;
+    justify-content: $justify-content;
+    flex-wrap: $wrap;
+}
+
+@mixin media-laptop-big {
+    @media (max-width: $content-width) { @content; }
+}
+
+@mixin media-laptop-small {
+    @media (max-width: $laptop-small-width) { @content; }
+}
+
+@mixin media-tablet {
+    @media (max-width: $tablet-width) { @content; }
+}
+
+@mixin media-mobile-big {
+    @media (max-width: $mobile-big-width) { @content; }
+}
+
+@mixin media-mobile-small {
+    @media (max-width: $mobile-small-width) { @content; }
+}

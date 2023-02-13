@@ -1,8 +1,8 @@
-@charset "UTF-8";
 @font-face {
-  font-family: "Arial-MT";
-  src: url("../assets/fonts/Arial-MT.woff");
-}
+  font-family: 'Arial-MT';
+  src: url("../assets/fonts/Arial-MT.woff"); /* Путь к файлу со шрифтом */
+ }
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,7 +12,7 @@
 body {
   min-width: 480px;
   min-height: 100vh;
-  font-family: "Arial", sans-serif;
+  font-family: 'Arial', sans-serif;
   font-size: 16px;
   color: #fff;
   text-align: center;
@@ -21,43 +21,13 @@ body {
   transition: background-image 1s ease-in-out;
 }
 
-.player-icon,
-.slider-icon,
-.change-quote {
-  width: 32px;
-  height: 32px;
-  background-size: 32px 32px;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-color: transparent;
-  border: 0;
-  outline: 0;
-  opacity: 0.8;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.player-icon:hover,
-.slider-icon:hover,
-.change-quote:hover {
-  opacity: 1;
-}
-
-.player-icon:active,
-.slider-icon:active,
-.change-quote:active {
-  border: 0;
-  outline: 0;
-  transform: scale(1.1);
-}
-
 .header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
   height: 30vh;
-  min-height: 220px;
+  min-height: 220px;  
   padding: 20px;
 }
 
@@ -78,9 +48,9 @@ body {
   padding: 5px;
   padding-left: 20px;
   list-style: none;
-  opacity: 0.8;
+  opacity: .8;
   cursor: pointer;
-  transition: 0.3s;
+  transition: .3s;
 }
 
 .play-item:hover {
@@ -88,7 +58,7 @@ body {
 }
 
 .play-item::before {
-  content: "✓";
+  content: "\2713";  
   position: absolute;
   left: 0;
   top: 2px;
@@ -97,6 +67,36 @@ body {
 
 .item-active::before {
   color: #C5B358;
+}
+
+.player-icon,
+.slider-icon,
+.change-quote {
+  width: 32px;
+  height: 32px;
+  background-size: 32px 32px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  opacity: .8;
+  cursor: pointer;
+  transition: .3s;  
+}
+
+.player-icon:hover,
+.slider-icon:hover,
+.change-quote:hover {
+  opacity: 1;
+}
+
+.player-icon:active,
+.slider-icon:active,
+.change-quote:active {
+  border: 0;
+  outline: 0;  
+  transform: scale(1.1);
 }
 
 .play {
@@ -125,7 +125,7 @@ body {
   align-items: flex-start;
   row-gap: 5px;
   width: 180px;
-  min-height: 180px;
+  min-height: 180px;  
   text-align: left;
 }
 
@@ -151,17 +151,17 @@ body {
   padding: 5px;
   font-size: 20px;
   line-height: 24px;
-  color: #fff;
+  color: #fff;  
   border: 0;
   outline: 0;
   border-bottom: 1px solid #fff;
   background-color: transparent;
 }
 
-.city::placeholder {
+.city::placeholder {  
   font-size: 20px;
   color: #fff;
-  opacity: 0.6;
+  opacity: .6;
 }
 
 .main {
@@ -172,7 +172,7 @@ body {
   align-items: center;
   width: 100%;
   height: 40vh;
-  min-height: 260px;
+  min-height: 260px;  
   padding: 20px;
 }
 
@@ -196,15 +196,9 @@ body {
 .time {
   min-height: 124px;
   margin-bottom: 10px;
-  font-family: "Arial-MT";
+  font-family: 'Arial-MT';
   font-size: 100px;
-  letter-spacing: -4px;
-}
-@media (max-width: 768px) {
-  .time {
-    min-height: 80px;
-    font-size: 72px;
-  }
+  letter-spacing: -4px;  
 }
 
 .date {
@@ -222,22 +216,11 @@ body {
   width: 100vw;
   font-size: 40px;
 }
-@media (max-width: 768px) {
-  .greeting-container {
-    min-height: 40px;
-    font-size: 32px;
-  }
-}
 
 .greeting {
-  flex: 1;
+  flex: 1;  
   padding: 10px;
   text-align: right;
-}
-@media (max-width: 768px) {
-  .greeting {
-    padding: 5px;
-  }
 }
 
 .name {
@@ -251,16 +234,10 @@ body {
   border: 0;
   outline: 0;
 }
-@media (max-width: 768px) {
-  .name {
-    font-size: 32px;
-    padding: 5px;
-  }
-}
 
 .name::placeholder {
   color: #fff;
-  opacity: 0.6;
+  opacity: .6;
 }
 
 .footer {
@@ -270,13 +247,13 @@ body {
   align-items: center;
   width: 100%;
   height: 30vh;
-  min-height: 160px;
+  min-height: 160px;  
   padding: 20px;
 }
 
 .change-quote {
   margin-bottom: 30px;
-  background-image: url("../assets/svg/reload.svg");
+  background-image: url("../assets/svg/reload.svg");  
 }
 
 .quote {
@@ -287,4 +264,23 @@ body {
   min-height: 20px;
 }
 
-/*# sourceMappingURL=style.css.map */
+@media (max-width: 768px) {
+  .time {
+    min-height: 80px;
+    font-size: 72px;    
+  }
+
+  .greeting-container {
+    min-height: 40px;
+    font-size: 32px;
+  }
+
+  .greeting {
+    padding: 5px;
+  }
+
+  .name {
+    font-size: 32px;
+    padding: 5px;
+  }
+}

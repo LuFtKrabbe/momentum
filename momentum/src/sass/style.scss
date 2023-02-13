@@ -1,0 +1,21 @@
+//abstract
+@import "abstract/constants";
+@import "abstract/mixins";
+
+//base
+@import "base/base";
+@import "base/buttons";
+@import "base/icons";
+
+//layouts
+@import "layouts/header";
+@import "layouts/player";
+@import "layouts/weather";
+
+@import "layouts/main";
+@import "layouts/slider";
+@import "layouts/time";
+@import "layouts/greeting";
+
+@import "layouts/footer";
+@import "layouts/quote";
