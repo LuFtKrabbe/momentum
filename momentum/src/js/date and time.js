@@ -1,5 +1,6 @@
 const selectedTime = document.querySelector('.time');
 const selectedDate = document.querySelector('.date');
+const globalLanguage = document.querySelector('.global-language').textContent;
 
 function showTime() {
     const fullDate = new Date();
@@ -11,9 +12,14 @@ function showTime() {
 }
 
 function showDate() {
+    let language = '';
+
+    if (globalLanguage == "РУС") {language = 'ru-RU'};
+    if (globalLanguage == "ENG") {language = 'en-EN'};
+
     const fullDate = new Date();
     const options = {weekday: "long", month: "long", day: "numeric"};
-    const currentDate = fullDate.toLocaleDateString('ru-Ru', options);
+    const currentDate = fullDate.toLocaleDateString(language, options);
     
     selectedDate.textContent = currentDate;
 

@@ -2,10 +2,16 @@ const quoteQuote = document.querySelector('.quote');
 const quoteAuthor = document.querySelector('.author');
 const quoteIcon = document.querySelector('.change-quote');
 
+const globalLanguage = document.querySelector('.global-language').textContent;
+
 quoteIcon.addEventListener('click', getQuotes);
 
 async function getQuotes() {  
-    const quotes = 'src/data.json';
+    let quotes = '';
+
+    if (globalLanguage == "РУС") {quotes = 'src/data.json'};
+    if (globalLanguage == "ENG") {quotes = 'src/dataEng.json'};
+
     const response = await fetch(quotes);
     const data = await response.json();
 
