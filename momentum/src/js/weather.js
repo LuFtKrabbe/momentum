@@ -48,7 +48,12 @@ async function getWeather() {
         if (!response.ok) {throw new Error()}
         weatherIcon.className = 'weather-icon owf';
     } catch (error) {
-        alert('Населенный пункт не найден или в названии допущена ошибка');
+        if (globalLanguage == "РУС") {
+            alert('Населенный пункт не найден или в названии допущена ошибка');
+        }
+        if (globalLanguage == "ENG") {
+            alert('Location not found or name misspelled');
+        }
         weatherCity.value = localStorage.getItem('userCity');
     }
 
