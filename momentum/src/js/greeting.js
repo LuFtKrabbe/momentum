@@ -1,14 +1,31 @@
+import {settingsLanguage} from '../js/settings.js';
+import {settingsLanguageContainer} from '../js/settings.js';
+
+
 const selectedGreeting = document.querySelector('.greeting');
 const selectedName = document.querySelector('.name');
 
-const globalLanguage = document.querySelector('.global-language').textContent;
+window.addEventListener('beforeunload', setLocalStorage);
+window.addEventListener('load', getLocalStorage);
+settingsLanguageContainer.addEventListener('change', languageGreeting);
+settingsLanguageContainer.addEventListener('change', showGreeting);
 
-function languageGreeting() {
-    if (globalLanguage == "РУС") {selectedName.placeholder = '[Введите имя]'};
-    if (globalLanguage == "ENG") {selectedName.placeholder = '[Enter name]'};
+function setLocalStorage() {
+    localStorage.setItem('userName', selectedName.value);
 }
 
-languageGreeting()
+function getLocalStorage() {
+    if (localStorage.getItem('userName')) {
+        selectedName.value = localStorage.getItem('userName');
+    }
+}
+
+function languageGreeting() {
+    if (settingsLanguage == "РУС") {selectedName.placeholder = '[Введите имя]'};
+    if (settingsLanguage == "ENG") {selectedName.placeholder = '[Enter name]'};
+}
+
+languageGreeting();
 
 function showGreeting() {
     const fullDate = new Date();
@@ -18,7 +35,7 @@ function showGreeting() {
         let timeOfDay = Math.floor(currentHour / 6);
         let greetingOfTime = '';
 
-        if (globalLanguage == "РУС") {
+        if (settingsLanguage == "РУС") {
             switch(timeOfDay) {
                 case 0: // [0:00, 6:00)
                     greetingOfTime = 'Доброй ночи';
@@ -36,7 +53,7 @@ function showGreeting() {
             return greetingOfTime;
         };
 
-        if (globalLanguage == "ENG") {
+        if (settingsLanguage == "ENG") {
             switch(timeOfDay) {
                 case 0: // [0:00, 6:00)
                     greetingOfTime = 'Good night';
@@ -61,19 +78,3 @@ function showGreeting() {
 }
 
 showGreeting();
-
-
-
-
-function setLocalStorage() {
-    localStorage.setItem('userName', selectedName.value);
-}
-
-function getLocalStorage() {
-    if (localStorage.getItem('userName')) {
-        selectedName.value = localStorage.getItem('userName');
-    }
-}
-
-window.addEventListener('beforeunload', setLocalStorage);
-window.addEventListener('load', getLocalStorage);

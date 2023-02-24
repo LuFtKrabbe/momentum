@@ -1,6 +1,10 @@
+import {settingsLanguage} from '../js/settings.js';
+import {settingsLanguageContainer} from '../js/settings.js';
+
+settingsLanguageContainer.addEventListener('change', showDate);
+
 const selectedTime = document.querySelector('.time');
 const selectedDate = document.querySelector('.date');
-const globalLanguage = document.querySelector('.global-language').textContent;
 
 function showTime() {
     const fullDate = new Date();
@@ -14,8 +18,8 @@ function showTime() {
 function showDate() {
     let language = '';
 
-    if (globalLanguage == "РУС") {language = 'ru-RU'};
-    if (globalLanguage == "ENG") {language = 'en-EN'};
+    if (settingsLanguage == "РУС") {language = 'ru-RU'};
+    if (settingsLanguage == "ENG") {language = 'en-EN'};
 
     const fullDate = new Date();
     const options = {weekday: "long", month: "long", day: "numeric"};

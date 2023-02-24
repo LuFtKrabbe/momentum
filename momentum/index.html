@@ -64,8 +64,88 @@
     </div>
   </main>
   <footer class="footer">
-    <div class="global-language">ENG</div>
-    <button class="change-quote"></button>
+    <div class="settings-container">
+      <div class="settings-language">
+        <div>
+          <input type="radio" id="ru" name="languages" value="github" checked>
+          <label for="huey">РУС</label>
+        </div>
+        <div>
+          <input type="radio" id="en" name="languages" value="unsplash">
+          <label for="huey">ENG</label>
+        </div>
+      </div>
+      <div class="settings-server-api-container">
+        <div>
+          <input type="radio" id="github" name="images-bg" value="github" checked>
+          <label for="github">GitHub</label>
+        </div>
+        <div>
+          <input type="radio" id="unsplash" name="images-bg" value="unsplash">
+          <label for="unsplash">Unsplash API</label>
+        </div>
+        <div>
+          <input type="radio" id="flickr" name="images-bg" value="flickr">
+          <label for="flickr">Flickr API</label>
+        </div>
+      </div>
+      <div class="settings-tags-container">
+        <div>
+          <input type="checkbox" id="morning" name="tags" checked>
+          <label for="morning">Morning</label>
+        </div>
+        <div>
+          <input type="checkbox" id="afternoon" name="tags" checked>
+          <label for="afternoon">Afternoon</label>
+        </div>
+        <div>
+          <input type="checkbox" id="evening" name="tags" checked>
+          <label for="evening">Evening</label>
+        </div>
+        <div>
+          <input type="checkbox" id="night" name="tags" checked>
+          <label for="night">Night</label>
+        </div>
+        <div>
+          <input type="checkbox" id="nature" name="tags" checked>
+          <label for="nature">Nature</label>
+        </div>
+      </div>
+      <div class="settings-blocks-container">
+        <div>
+          <input type="checkbox" id="time" name="blocks" checked>
+          <label for="time">Time</label>
+        </div>
+        <div>
+          <input type="checkbox" id="date" name="blocks" checked>
+          <label for="date">Date</label>
+        </div>
+        <div>
+          <input type="checkbox" id="greeting" name="blocks" checked>
+          <label for="greeting">Greeting</label>
+        </div>
+        <div>
+          <input type="checkbox" id="quote" name="blocks" checked>
+          <label for="quote">Quote</label>
+        </div>
+        <div>
+          <input type="checkbox" id="weather" name="blocks" checked>
+          <label for="weather">Weather</label>
+        </div>
+        <div>
+          <input type="checkbox" id="audio" name="blocks" checked>
+          <label for="audio">Audio</label>
+        </div>
+        <div>
+          <input type="checkbox" id="todolist" name="blocks" checked>
+          <label for="todolist">Todo list</label>
+        </div>
+      </div>
+    </div>
+    <div>
+      <button class="change-quote"></button>
+      <button class="settings-app"></button>
+    </div>
     <div>
       <div class="quote"></div>
       <div class="author"></div>
