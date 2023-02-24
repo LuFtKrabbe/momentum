@@ -4,14 +4,32 @@
     font-family: 'Arial-MT';
     font-size: 100px;
     letter-spacing: -4px;
+    opacity: 1;
+    visibility: visible;
+    transition: all 500ms ease-in-out;
     @include media-tablet {
         min-height: 80px;
         font-size: 72px;
     }
+}
+
+.time-hidden {
+   opacity: 0;
+   visibility: hidden;
+   transition: all 500ms ease-in-out;
 }
   
 .date {
     min-height: 28px;
     font-size: 24px;
     margin-bottom: 20px;
+    opacity: 1;
+    visibility: visible;
+    transition: all 500ms ease-in-out;
+}
+
+.date-hidden {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 500ms ease-in-out;
 }

@@ -10,6 +10,7 @@ const weatherCity = document.querySelector('.city');
 
 window.addEventListener('beforeunload', setWeatherCityLocalStorage);
 window.addEventListener('load', getWeatherCityLocalStorage);
+window.addEventListener('load', getWeather);
 weatherCity.addEventListener('change', getWeather);
 settingsLanguageContainer.addEventListener('change', getWeather);
 
@@ -66,13 +67,19 @@ async function getWeather() {
         weatherWind.textContent = `Скорость ветра: ${Math.round(data.wind.speed)} м/с`;
         weatherHumidity.textContent = `Влажность: ${data.main.humidity}%`;
     }
+    if (settingsLanguage == "РУС" && weatherCity.value == 'Minsk') {
+        weatherCity.value = 'Минск';
+        localStorage.setItem('userCity', weatherCity.value);
+    }
 
     if (settingsLanguage == "ENG") {
         weatherWind.textContent = `Wind speed: ${Math.round(data.wind.speed)} m/s`;
         weatherHumidity.textContent = `Humidity: ${data.main.humidity}%`;
     }
+    if ((settingsLanguage == "ENG" && weatherCity.value == 'Минск')) {
+        weatherCity.value = 'Minsk';
+        localStorage.setItem('userCity', weatherCity.value);
+    }
 
     setWeatherCityLocalStorage();
 }
-
-getWeather();

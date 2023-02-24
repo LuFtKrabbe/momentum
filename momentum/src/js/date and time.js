@@ -1,7 +1,10 @@
 import {settingsLanguage} from '../js/settings.js';
 import {settingsLanguageContainer} from '../js/settings.js';
 
+
 settingsLanguageContainer.addEventListener('change', showDate);
+window.addEventListener('load', showDate);
+window.addEventListener('load', showTime);
 
 const selectedTime = document.querySelector('.time');
 const selectedDate = document.querySelector('.date');
@@ -23,12 +26,10 @@ function showDate() {
 
     const fullDate = new Date();
     const options = {weekday: "long", month: "long", day: "numeric"};
+    
     const currentDate = fullDate.toLocaleDateString(language, options);
     
     selectedDate.textContent = currentDate;
 
     setTimeout(showDate, 1000);
 }
-
-showTime();
-showDate();

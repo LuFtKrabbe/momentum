@@ -7,6 +7,7 @@ const quoteIcon = document.querySelector('.change-quote');
 
 quoteIcon.addEventListener('click', getQuotes);
 settingsLanguageContainer.addEventListener('change', getQuotes);
+window.addEventListener('load', getQuotes);
 
 async function getQuotes() {  
     let quotes = '';
@@ -34,5 +35,3 @@ async function getQuotes() {
     quoteQuote.textContent = data[randomNum]["text"];
     quoteAuthor.textContent = data[randomNum]["author"];
 }
-
-getQuotes();

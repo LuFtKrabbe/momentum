@@ -66,6 +66,16 @@ body {
 .player {
   display: flex;
   flex-direction: column;
+  opacity: 1;
+  visibility: visible;
+  transition: all 500ms ease-in-out;
+}
+
+.player-hidden {
+  visibility: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 500ms ease-in-out;
 }
 
 .player-controls {
@@ -219,6 +229,15 @@ body {
   width: 180px;
   min-height: 180px;
   text-align: left;
+  opacity: 1;
+  visibility: visible;
+  transition: all 500ms ease-in-out;
+}
+
+.weather-hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 500ms ease-in-out;
 }
 
 .weather-error {
@@ -291,6 +310,9 @@ body {
   font-family: "Arial-MT";
   font-size: 100px;
   letter-spacing: -4px;
+  opacity: 1;
+  visibility: visible;
+  transition: all 500ms ease-in-out;
 }
 @media (max-width: 768px) {
   .time {
@@ -299,10 +321,25 @@ body {
   }
 }
 
+.time-hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 500ms ease-in-out;
+}
+
 .date {
   min-height: 28px;
   font-size: 24px;
   margin-bottom: 20px;
+  opacity: 1;
+  visibility: visible;
+  transition: all 500ms ease-in-out;
+}
+
+.date-hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 500ms ease-in-out;
 }
 
 .greeting-container {
@@ -313,12 +350,21 @@ body {
   min-height: 48px;
   width: 100vw;
   font-size: 40px;
+  opacity: 1;
+  visibility: visible;
+  transition: all 500ms ease-in-out;
 }
 @media (max-width: 768px) {
   .greeting-container {
     min-height: 40px;
     font-size: 32px;
   }
+}
+
+.greeting-hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 500ms ease-in-out;
 }
 
 .greeting {
@@ -370,14 +416,37 @@ body {
 .change-quote {
   margin-bottom: 30px;
   background-image: url("../assets/svg/reload.svg");
+  display: visible;
+}
+
+.change-quote-hidden {
+  display: none;
 }
 
 .quote {
   min-height: 32px;
+  opacity: 1;
+  visibility: visible;
+  transition: all 500ms ease-in-out;
+}
+
+.quote-hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 500ms ease-in-out;
 }
 
 .author {
   min-height: 20px;
+  opacity: 1;
+  visibility: visible;
+  transition: all 500ms ease-in-out;
+}
+
+.author-hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 500ms ease-in-out;
 }
 
 .settings-container {
@@ -392,7 +461,7 @@ body {
   z-index: 1;
   top: -20px;
   height: 50%;
-  transition: all 300ms ease-in-out;
+  transition: all 500ms ease-in-out;
 }
 
 .settings-container-hidden {
@@ -432,8 +501,23 @@ body {
   display: flex;
   justify-content: center;
   margin: 5px 0px 5px 0px;
+  opacity: 1;
+  visibility: visible;
+  transition: all 500ms ease-in-out;
 }
 .settings-tags-container div {
+  margin: 0px 5px 0px 5px;
+}
+
+.tags-hidden {
+  display: flex;
+  justify-content: center;
+  margin: 5px 0px 5px 0px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 500ms ease-in-out;
+}
+.tags-hidden div {
   margin: 0px 5px 0px 5px;
 }
 
@@ -449,7 +533,7 @@ body {
 .settings-app {
   width: 32px;
   height: 32px;
-  margin: 0px 0px 0px 10px;
+  margin: 0px 10px 30px 10px;
   background-size: 39px 39px;
   background-image: url("../assets/svg/settings.svg");
 }

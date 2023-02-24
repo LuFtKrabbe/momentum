@@ -1,14 +1,84 @@
 const settingsServerApiContainer = document.querySelector('.settings-server-api-container');
-settingsServerApiContainer.addEventListener('change', switchApi);
-
+const settingsTagsContainer = document.querySelector('.settings-tags-container');
 const selectedBg = document.querySelector('body');
 const img = new Image();
 let randomNum = Math.floor(Math.random() * 20) + 1;
 
+settingsServerApiContainer.addEventListener('change', switchApi);
+settingsServerApiContainer.addEventListener('change', setLocalStorage);
+
+settingsTagsContainer.addEventListener('change', checkTags);
+settingsTagsContainer.addEventListener('change', switchApi);
+
+window.addEventListener('load', getLocalStorage);
+window.addEventListener('load', loadTags);
+window.addEventListener('load', switchApi);
+
+
+
+function setLocalStorage(event) {
+    localStorage.setItem('imgReceiving', event.target.id);
+}
+
+function getLocalStorage() {
+    if (localStorage.getItem('imgReceiving')) {
+        document.getElementById(localStorage.getItem('imgReceiving')).checked = true;
+    }
+}
+
+function checkTags() {
+    const morning = document.getElementById('morning');
+    const afternoon = document.getElementById('afternoon');
+    const evening = document.getElementById('evening');
+    const night = document.getElementById('night');
+    const nature = document.getElementById('nature');
+
+
+    let searchTags = [];
+    let tags = [morning, afternoon, evening, night, nature];
+
+    for (let i = 0; i < tags.length; i++) {
+        if (tags[i].checked == true) {
+            searchTags.push(tags[i].id);
+            localStorage.setItem(tags[i].id + 'Tag', true);
+        } else {
+            localStorage.setItem(tags[i].id + 'Tag', false);
+        }
+    }
+
+    console.log(searchTags);
+    return searchTags;
+}
+
+function loadTags() {
+    const morning = document.getElementById('morning');
+    const afternoon = document.getElementById('afternoon');
+    const evening = document.getElementById('evening');
+    const night = document.getElementById('night');
+    const nature = document.getElementById('nature');
+
+    let tags = [morning, afternoon, evening, night, nature];
+
+    for (let i = 0; i < tags.length; i++) {
+        if (localStorage.getItem(tags[i].id + 'Tag') == 'false') {
+            tags[i].checked = false;
+        }
+    }    
+}
+
 function switchApi() {
-    if (document.getElementById('github').checked) {setBg()}
-    if (document.getElementById('unsplash').checked) {setBgUnsplash()}
-    if (document.getElementById('flickr').checked) {setBgFlickr()}
+    if (document.getElementById('github').checked) {
+        setBg();
+        settingsTagsContainer.classList.add('tags-hidden');
+    }
+    if (document.getElementById('unsplash').checked) {
+        setBgUnsplash();
+        settingsTagsContainer.classList.remove('tags-hidden');
+    }
+    if (document.getElementById('flickr').checked) {
+        setBgFlickr();
+        settingsTagsContainer.classList.remove('tags-hidden');
+    }
 }
 
 function getTimeOfDay() {
@@ -31,11 +101,14 @@ function setBg() {
     })
 }
 
-setBg();
-
 async function setBgUnsplash() {
+    let tags = checkTags();
+    if (tags.length == 0) {tags = ['meal']};
+    let randomTag = Math.floor(Math.random()*tags.length);
+    console.log(tags[randomTag]);
+    
     let orientation = 'landscape';
-    let query = getTimeOfDay();
+    let query = tags[randomTag];
     let key = 'sxWmpqDDGplK86BYiFL5wrtlk4do6Qpk7wlXjlvTx4I';
 
     let url = 'https://api.unsplash.com/photos/random?';
@@ -51,7 +124,12 @@ async function setBgUnsplash() {
 }
 
 async function setBgFlickr() {
-    let query = getTimeOfDay();
+    let tags = checkTags();
+    if (tags.length == 0) {tags = ['meal']};
+    let randomTag = Math.floor(Math.random()*tags.length);
+    let query = tags[randomTag];
+    console.log(tags[randomTag]);
+
     let key = 'f0b800bbf9777fa04c11bd5d8160cdca';
     let bigPhotos = 'url_l';
 

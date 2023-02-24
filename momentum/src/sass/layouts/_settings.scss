@@ -10,7 +10,7 @@
     z-index: 1;
     top: -20px;
     height: 50%;
-    transition: all 300ms ease-in-out;
+    transition: all 500ms ease-in-out;
 }
 
 .settings-container-hidden{
@@ -50,6 +50,21 @@
     display: flex;
     justify-content: center;
     margin: 5px 0px 5px 0px;
+    opacity: 1;
+    visibility: visible;
+    transition: all 500ms ease-in-out;
+    & div {
+        margin: 0px 5px 0px 5px;
+    }
+}
+
+.tags-hidden {
+    display: flex;
+    justify-content: center;
+    margin: 5px 0px 5px 0px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 500ms ease-in-out;
     & div {
         margin: 0px 5px 0px 5px;
     }
@@ -67,7 +82,7 @@
 .settings-app {
     width: 32px;
     height: 32px;
-    margin: 0px 0px 0px 10px;
+    margin: 0px 10px 30px 10px;
     background-size: 39px 39px; 
     background-image: url("../assets/svg/settings.svg");
 }

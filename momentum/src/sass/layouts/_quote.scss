@@ -1,12 +1,35 @@
 .change-quote {
     margin-bottom: 30px;
-    background-image: url("../assets/svg/reload.svg");  
+    background-image: url("../assets/svg/reload.svg");
+    display: visible;
+}
+
+.change-quote-hidden {
+    display: none;
 }
   
 .quote {
     min-height: 32px;
+    opacity: 1;
+    visibility: visible;
+    transition: all 500ms ease-in-out;
 }
-  
+
+.quote-hidden {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 500ms  ease-in-out;
+}
+
 .author {
     min-height: 20px;
+    opacity: 1;
+    visibility: visible;
+    transition: all 500ms ease-in-out;
+}
+
+.author-hidden {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 500ms  ease-in-out;
 }
