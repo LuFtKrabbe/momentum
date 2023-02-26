@@ -2,6 +2,12 @@
     margin-bottom: 30px;
     background-image: url("../assets/svg/reload.svg");
     display: visible;
+    @include media-tablet {
+        width: 24px;
+        height: 24px;
+        background-size: 24px 24px;
+        margin: 0px 0px 15px 0px;
+    }
 }
 
 .change-quote-hidden {

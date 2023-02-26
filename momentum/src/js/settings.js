@@ -68,7 +68,7 @@ function switchLanguage() {
         quote.parentElement.children[1].textContent = 'Цитата';
         weather.parentElement.children[1].textContent = 'Погода';
         audio.parentElement.children[1].textContent = 'Аудио';
-        todolist.parentElement.children[1].textContent = 'Список дел';
+        todolist.parentElement.children[1].textContent = 'Дела';
     }
     if (EN.checked) {
         settingsLanguage = 'ENG'
@@ -84,7 +84,7 @@ function switchLanguage() {
         quote.parentElement.children[1].textContent = 'Quote';
         weather.parentElement.children[1].textContent = 'Weather';
         audio.parentElement.children[1].textContent = 'Audio';
-        todolist.parentElement.children[1].textContent = 'Todo list';
+        todolist.parentElement.children[1].textContent = 'Todo';
     }
 }
 

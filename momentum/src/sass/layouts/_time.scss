@@ -11,6 +11,10 @@
         min-height: 80px;
         font-size: 72px;
     }
+    @include media-mobile-small {
+        min-height: 52px;
+        font-size: 36px;
+    }
 }
 
 .time-hidden {
@@ -26,6 +30,10 @@
     opacity: 1;
     visibility: visible;
     transition: all 500ms ease-in-out;
+    @include media-mobile-small {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
 }
 
 .date-hidden {

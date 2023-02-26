@@ -6,4 +6,7 @@
     height: 30vh;
     min-height: 220px;  
     padding: 20px;
+    @include media-mobile-small {
+        flex-direction: column;
+    }
 }

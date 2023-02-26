@@ -8,9 +8,21 @@
 .slide-prev {
     left: 20px;
     background-image: url("../assets/svg/slider-prev.svg");
+    @include media-mobile-small {
+        left: 16px;
+        width: 24px;
+        height: 24px;
+        background-size: 24px 24px;
+    }
 }
 
 .slide-next {
     right: 20px;
     background-image: url("../assets/svg/slider-next.svg");
+    @include media-mobile-small {
+        right: 16px;
+        width: 24px;
+        height: 24px;
+        background-size: 24px 24px;
+    }
 }

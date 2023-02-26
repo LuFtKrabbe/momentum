@@ -8,4 +8,22 @@
     height: 30vh;
     min-height: 160px;  
     padding: 20px;
+    @include media-mobile-small {
+        font-size: 12px;
+    }
+}
+
+.links-container {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    right: 0px;
+    bottom: 0px;
+    & img {
+        width: 30px;
+        height: 30px;
+    }
+    & p {
+        margin: 0px 4px;
+    }
 }

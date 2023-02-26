@@ -11,6 +11,22 @@
     top: -20px;
     height: 50%;
     transition: all 500ms ease-in-out;
+    @include media-tablet {
+        font-size: 12px;
+        padding: 5px 5px;
+        & input {
+            height: 11px;
+            width: 11px;
+        }
+    }
+    @include media-mobile-small {
+        font-size: 7px;
+        padding: 2px 2px;
+        & input {
+            height: 11px;
+            width: 11px;
+        }
+    }
 }
 
 .settings-container-hidden{
@@ -77,6 +93,11 @@
     & div {
         margin: 0px 5px 0px 5px;
     }
+    @include media-mobile-small {
+        & div {
+            margin: 0px 2px 0px 2px;
+        }
+    }
 }
 
 .settings-app {
@@ -85,4 +106,10 @@
     margin: 0px 10px 30px 10px;
     background-size: 39px 39px; 
     background-image: url("../assets/svg/settings.svg");
+    @include media-tablet {
+        width: 24px;
+        height: 24px;
+        background-size: 29px 29px;
+        margin: 0px 10px 10px 10px;
+    }
 }

@@ -10,7 +10,11 @@
     opacity: 1;
     visibility: visible;
     transition: all 500ms ease-in-out;
-
+    @include media-mobile-small {
+        padding-top: 8px;
+        min-height: 0px;  
+        font-size: 12px;
+    }
 }
 
 .weather-hidden {
@@ -32,7 +36,10 @@
 }
   
 .weather-icon {
-    font-size: 44px;
+    font-size: 48px;
+    @include media-mobile-small {
+        font-size: 28px;
+    }
 }
   
 .city {
@@ -46,6 +53,13 @@
     outline: 0;
     border-bottom: 1px solid #fff;
     background-color: transparent;
+    @include media-mobile-small {
+        padding: 8px;
+        font-size: 16px;
+        width: 250px;
+        height: 20px;
+        padding: 5px;
+    }
 }
   
 .city::placeholder {  

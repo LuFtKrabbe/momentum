@@ -53,7 +53,6 @@ playList.forEach (element => {
 })
 
 const playTrackPlayButton = document.querySelector('ul');
-console.log(playTrackPlayButton);
 
 playPrevButton.addEventListener('click', playTrackPrev);
 playButton.addEventListener('click', playAudio);
