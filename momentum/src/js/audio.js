@@ -148,7 +148,6 @@ function setMusicTime(event) {
 function showProgress() {
     playProgress.style.width = (audioPlayer.currentTime / audioPlayer.duration) * 100 + '%';
     playMusicCurrentTime.textContent = getTimeCodeFromNum(audioPlayer.currentTime);
-    console.log(audioPlayer.currentTime);
 }
 
 function getTimeCodeFromNum(num) {

@@ -10,6 +10,6 @@ module.exports = {
         filename: 'index.bundle.js',
     },
 
-    mode: 'development',
+    mode: 'production',
     watch: true,
 }
